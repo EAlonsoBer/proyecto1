@@ -13,30 +13,41 @@
         <div class="row">
             <div class="col-md12">
                 <div class="form-group">
-                    <label for="texto">Texto a Cifrar:</label>
+                    <label for="texto" id="txt1">Texto a Cifrar:</label>
                     <textarea type="text" name="texto" id="texto" class="form-control"></textarea>
                 </div>
             </div>
         </div>
         <br>
         <input type="button" class="btn btn-info" value="Cifrado Cesar">
+        <input type="button" class="btn btn-info" value="Descifrado Cesar" onclick="descifrar()">
         <input type="button" class="btn btn-info" value="Cifrado Viggenere" onclick="reiniciar()">
-        <input type="button" class="btn btn-info" value="Descifrado Cesar">
-        <input type="button" class="btn btn-info" value="Descifrado Viggenere" onclick ="reiniciar()">
-        <input type="button" class="btn btn-info" value="reiniciar" onclick="reiniciar()">
-        <input type="button" class="btn btn-info" value="Copiar" onclick="colocar()">
+        <input type="button" class="btn btn-info" value="Reiniciar" onclick="reiniciar()">
+        <br><br> 
+        <input type="button" class="btn btn-info" value="Copiar" onclick="colocar()" id="copiar">
         <div class="row">
             <div class="col-md12">
                 <div class="form-group">
-                    <label for="desplazamiento">Desplazamiento</label>
+                    <label for="desplazamiento" id="labelDesplazamiento" style="display: none;">Desplazamiento</label>
                     <input type="range" min="1" max="25" step="1" value="1" name="desplazamiento" id="desplazamiento" class="form-control" style="display: none;">
                 </div>
             </div>
-            <div class="col-md12">
-                <div class="form-group">
-                    <label for="texto cifrado">Texto cifrado:</label>
-                    <textarea type="text" name="cifrado" id="cifrado" class="form-control" disabled="disable" style="display: none;"></textarea>
-                </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="textoCifrar" id="labeltextoCifrar" style="display: none;">Ingrese texto a cifrar</label>
+                <textarea type="text" id="txt" onpaste="return false;" ondrop="return false;" style="display: none;"></textarea>
+                <label for="clave" id="labelClave" style="display: none;">Ingrese clave</label>
+                <input type="text" name="posicionamiento" id="txtClave" onpaste="return false;" ondrop="return false;" style="display: none;">
+                <textarea type="text" name="cifrado" id="cifrado" class="form-control" disabled="disable" style="display: none;"></textarea>
+                <br>
+                <textarea id="res" onpaste="return false;" ondrop="return false;" style="display: none;"></textarea>
+                <br>
+                <input type="button" class="btn btn-info" value="cifrar" onclick="longitudCifrar()" id="btcifrar" style="display: none;"> 
+                <br>
+                <input type="button" class="btn btn-info" value="descifrar" onclick="longitudDescifrar()" id="btdescifrar" style="display: none;">
+                <br>
+                <input type="button" class="btn btn-info" value="copiar" onclick="colocar2()" id="copiar2" style="display: none;">
             </div>
         </div>
     </div>
@@ -44,42 +55,5 @@
     <script src="./js/viggenere.js"></script>
 
     <br><br><br>
-    <hr>
-    <h1>Cifrado Viggenere</h1>
-    <div class="container">
-        <div class="center-block">
-            <article class="datos">
-                <p><h3>Texto a cifrar</h3></p>
-                <br>
-                <p><input type="text" id="txt"></p>
-                <br>
-                <p>
-                    <input type="button" class="btn btn-info"
-                    value="cifrar" onclick="longitudCifrar()">
-                    <input type="button" class="btn btn-info"
-                    value="descifrar" onclick="longitudDescifrar()">
-                    <input type="button" class="btn btn-info"
-                    value="reiniciar" onclick="reiniciar()">
-                </p>
-                <br>
-                <p><h3>Ingrese la clave secreta:</h3></p>
-                <br>
-                <p>
-                    <input type="text" name="posicionamiento" id="txtClave"
-                    onpaste="return false;" ondrop="return false;">
-                </p>
-                <p><h3>Ingrese el texto que desee cifrar</h3></p>
-                <br>
-                <textarea id="res" onpaste="return false;"
-                ondrop="return false;"></textarea>
-                <br>
-                <p>
-                    <input type="button" class="btn btn-info"
-                    value="Copiar" onclick="colocar()">
-                </p>
-            </article>
-        </div>
-    </div>
-    <script src="./js/viggenere.js"></script>
 </body>
 </html>

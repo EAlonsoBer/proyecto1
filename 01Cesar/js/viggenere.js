@@ -134,7 +134,13 @@ function colocar(){
 }
 
 function reiniciar(){
-    document.getElementById("texto").value = "";
+    document.getElementById("txt").value = "";
     document.getElementById("txtClave").value = "";
     document.getElementById("cifrado").value = "";
+}
+
+function colocar2(){
+    var copiado = document.getElementById("res").value;
+
+    document.getElementById("txt").value = copiado;
 }
