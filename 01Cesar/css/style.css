@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    color: aqua;
+    font-size: 54px;
+}
+
+hr{
+    color: coral;
+    size: 8;
+}
+
+html{
+    font-family: sans-serif;
+    background-color: lightsteelblue;
+}
